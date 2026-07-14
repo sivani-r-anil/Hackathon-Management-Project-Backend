@@ -42,6 +42,12 @@ app.post("/add-team",async (req,res) =>{
     res.json({"status":"success"})
 })
 
+
+app.post("/view-teams",async(req,res)=>{
+    const teams=await team.find()
+    res.json(teams)
+})
+
 app.listen(3000, () => {
     console.log("Server started")
 })
